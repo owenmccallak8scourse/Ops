@@ -1,0 +1,3 @@
+- op: replace
+  path: /data/PRIVATE_API
+  value: PROD_ENDPOINT # <- valor de ejemplo para ambiente produccion
