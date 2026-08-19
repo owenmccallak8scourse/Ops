@@ -24,6 +24,10 @@ patches:
       kind: Ingress
       name: public-api
     path: ing-patch.yaml
+    - target:
+      kind: Deployment
+      name: public-api
+    path: deploy.yaml
 
 # Image patch
 images:

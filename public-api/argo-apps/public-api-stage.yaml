@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: stage-public-api
+  finalizers: []
+spec:
+  destination:
+    namespace: public-stage
+    server: https://kubernetes.default.svc
+  source:
+    path: public-api/overlays/stage
+    repoURL: git@github.com:owenmccallak8scourse/Ops.git
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      enabled: true
+    syncOptions:
+      - CreateNamespace=true
